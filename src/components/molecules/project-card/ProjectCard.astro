@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+export interface Project {
+  name: string;
+  version: string;
+  status: string;
+  description: string;
+  repository: string;
+  preview: string;
+  imageUrl?: string;
+  featured?: boolean;
+  techStack: {
+    [category: string]: string[];
+  };
+  dependencies: { name: string; version: string }[];
+}
+
+const { project } = Astro.props;
+if (!project) {
+  throw new Error("Project data is missing");
+}
+---
+
+<article class="rounded-lg bg-[var(--bg-secondary)] p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group relative overflow-hidden" style="min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--accent-primary)]/10 to-[var(--accent-primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+  <header class="mb-4">
+    <div class="flex items-center gap-3 mb-2">
+      <h3 class="text-xl font-semibold text-[var(--accent-primary)]">{project.name}</h3>
+      <span class="px-2 py-1 text-xs font-mono bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] rounded" aria-label={"Project version: " + project.version}>v{project.version}</span>
+      <span class="px-2 py-1 text-xs bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded" aria-label={"Project status: " + project.status}>{project.status}</span>
+    </div>
+    <p class="text-[var(--text-secondary)] mb-4">{project.description}</p>
+  </header>
+
+  <Image
+    src={project.imageUrl}
+    alt={project.name}
+    class="rounded-lg mb-4 bg-slate-700"
+    width={400}
+    height={300}
+    style="object-fit: cover;"
+    format="webp"
+    loading="lazy"
+  />
+
+  <div class="grid gap-4">
+    <div class="space-y-2">
+      <h4 class="text-sm font-semibold text-slate-400">Tech Stack</h4>
+      <div class="flex flex-wrap gap-2" role="list">
+        {Object.entries(project.techStack).map(([category, items]) => (
+          (items as string[]).map((item: string) => (
+            <span class="px-2 py-1 text-xs bg-slate-700/30 text-slate-200 rounded-full" role="listitem" aria-label="${category} technology: ${item}">
+              {item}
+            </span>
+          ))
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <h4 class="text-sm font-semibold text-slate-400">Dependencies</h4>
+      <div class="flex flex-wrap gap-2">
+        {project.dependencies && project.dependencies.length > 0 ? (
+          project.dependencies.map((dep: { name: string; version: string }) => (
+            <span class="px-2 py-1 text-xs bg-slate-700/30 text-slate-200 rounded-full">
+              {dep.name}@{dep.version}
+            </span>
+          ))
+        ) : (
+          <span>No dependencies</span>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-6 pt-4 border-t border-slate-700/50 flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-4">
+    <a href={project.repository} class="text-emerald-400 hover:text-emerald-300 text-sm flex items-center gap-2 " target="_blank" rel="noopener noreferrer">
+      <span>View Repository</span>
+      <span aria-hidden="true">→</span>
+    </a>
+    <a href={project.preview} class="text-slate-400 hover:text-slate-300 text-sm" target="_blank" rel="noopener noreferrer">
+      Live Preview
+    </a>
+  </footer>
+<style>
+  @media (max-width: 768px) {
+    article {
+      flex-direction: column;
+      min-height: 250px; /* Adjust for smaller screens */
+    }
+  }
+</style>
+</article>
+
+:root {
+  --accent-primary-rgb: 99, 102, 241;
+  --accent-secondary-rgb: 139, 92, 246;
+}
+
+.group {
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.1);
+  background: linear-gradient(
+    145deg,
+    rgba(var(--accent-primary-rgb), 0.05),
+    rgba(var(--accent-secondary-rgb), 0.02)
+  );
+  transition: all 0.3s ease;
+}
+
+.group:hover {
+  border-color: rgba(var(--accent-primary-rgb), 0.3);
+  box-shadow: 0 8px 32px rgba(var(--accent-primary-rgb), 0.1);
+}
+
+.tech-stack span {
+  background: rgba(var(--accent-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-primary-rgb), 0.2);
+  transition: all 0.2s ease;
+}
+
+.tech-stack span:hover {
+  background: rgba(var(--accent-primary-rgb), 0.2);
+  transform: translateY(-2px);
+}
+
+.image-container {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  padding: 2px;
+}
+
+.project-image {
+  border-radius: 0.75rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .project-image {
+  transform: scale(1.03);
+}

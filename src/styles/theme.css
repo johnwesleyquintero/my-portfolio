@@ -1,0 +1,97 @@
+:root {
+  /* Light theme colors */
+  --bg-primary-light: #ffffff;
+  --bg-secondary-light: #f1f5f9;
+  --text-primary-light: #0f172a;
+  --text-secondary-light: #334155;
+  --accent-primary-light: #10b981;
+  --accent-secondary-light: #0ea5e9;
+  --border-light: #e2e8f0;
+
+  /* Dark theme colors */
+  --bg-primary-dark: #0f172a;
+  --bg-secondary-dark: #1e293b;
+  --text-primary-dark: #f1f5f9;
+  --text-secondary-dark: #94a3b8;
+  --accent-primary-dark: #34d399;
+  --accent-secondary-dark: #38bdf8;
+  --border-dark: #334155;
+
+  /* Common variables */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* Light theme styles */
+:root[data-theme="light"] {
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --accent-primary: var(--accent-primary-light);
+  --accent-secondary: var(--accent-secondary-light);
+  --border: var(--border-light);
+}
+
+/* Dark theme styles */
+:root[data-theme="dark"] {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --accent-primary: var(--accent-primary-dark);
+  --accent-secondary: var(--accent-secondary-dark);
+  --border: var(--border-dark);
+}
+
+/* Base styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Common component styles */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.button {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.button:hover {
+  background-color: var(--accent-secondary);
+}
+
+/* Text styles */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Border styles */
+.border-themed {
+  border-color: var(--border);
+}
+
+/* Background styles */
+.bg-themed {
+  background-color: var(--bg-secondary);
+}

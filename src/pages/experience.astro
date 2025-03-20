@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/data-server.js';
+const { experience } = data;
+
+---
+
+<Layout title="Experience | Wesley Quintero">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Professional Experience</h1>
+    
+    <div class="relative border-l-2 border-[var(--accent-primary)] pl-8 space-y-12">
+      {experience.map((job, index) => (
+        <div class="relative">
+          <div class="absolute -left-10 mt-1.5 h-4 w-4 rounded-full border-2 border-[var(--accent-primary)] bg-[var(--bg-primary)]"></div>
+          
+          <div class="bg-[var(--bg-secondary)] rounded-lg p-6 shadow-lg">
+            <div class="flex flex-wrap justify-between items-start mb-4">
+              <div>
+                <h2 class="text-2xl font-bold text-[var(--accent-primary)]">{job.title}</h2>
+                <p class="text-[var(--text-primary)]">{job.company}</p>
+              </div>
+              <div class="text-right">
+                <span class="px-3 py-1 text-sm bg-[var(--accent-primary)]/20 text-[var(--accent-primary)] rounded-full">
+                  {job.type}
+                </span>
+                <p class="text-[var(--text-secondary)] mt-2">{job.period.start} - {job.period.end}</p>
+                <p class="text-[var(--text-secondary)]">{job.period.duration}</p>
+              </div>
+            </div>
+            
+            {job.description && (
+              <p class="text-[var(--text-primary)] mb-4">{job.description}</p>
+            )}
+            
+            {job.responsibilities && (
+              <div class="mb-4" role="region" aria-labelledby={`responsibilities-${index}`}>
+                <h3 id={`responsibilities-${index}`} class="text-lg font-semibold mb-2 text-[var(--accent-primary)]">Key Responsibilities</h3>
+                <ul class="list-disc list-inside space-y-1 text-[var(--text-secondary)]">
+                  {job.responsibilities.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {job.achievements && (
+              <div class="mb-4" role="region" aria-labelledby={`achievements-${index}`}>
+                <h3 id={`achievements-${index}`} class="text-lg font-semibold mb-2 text-[var(--accent-primary)]">Key Achievements</h3>
+                <ul class="list-disc list-inside space-y-1 text-[var(--text-secondary)]">
+                  {job.achievements.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {job.skills && (
+              <div class="mt-4" role="region" aria-labelledby={`skills-${index}`}>
+                <h3 id={`skills-${index}`} class="sr-only">Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                  {job.skills.map((skill) => (
+                    <span class="px-2 py-1 text-sm bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded border border-[var(--border)] hover:border-[var(--accent-primary)] transition-colors">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>

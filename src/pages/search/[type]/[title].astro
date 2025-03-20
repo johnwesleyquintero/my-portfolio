@@ -1,0 +1,74 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import type { Project, Skill, Experience, Certification } from '../../../types';
+import data from '../../../data/data-server.js';
+
+export async function getStaticPaths() {
+  const skillPaths = Object.values(data.skills?.categories || {})
+    .flatMap((category) => category)
+    .map((skill: Skill) => ({ params: { type: 'skill', title: skill?.name || '' } }));
+
+  const experiencePaths = data.experience?.map((exp) => ({ params: { type: 'experience', title: exp?.title || '' } })) || [];
+
+  const certificationPaths = data.certifications?.list?.map((cert) => ({ params: { type: 'certification', title: cert?.name || '' } })) || [];
+
+  const projectPaths = [
+    ...(data.projects?.featured || []),
+    ...(data.projects?.portfolio || [])
+  ].map((proj) => ({ params: { type: 'project', title: proj?.name || '' } }));
+
+  return [...skillPaths, ...experiencePaths, ...certificationPaths, ...projectPaths];
+}
+
+export async function getStaticProps({ params }: { params: { type: string; title: string; }; }) {
+  const { type, title } = params;
+  let item: Project | Skill | Experience | Certification | null = null as Project | Skill | Experience | Certification | null;
+
+  switch (type) {
+    case 'skill':
+      item = Object.values(data.skills?.categories || {})
+        .flatMap((category) => category)
+        .find((skill) => skill.name === title) as Skill | undefined;
+      item = item as Skill | null;
+      break;
+    case 'experience':
+      item = data.experience?.find((exp) => exp.title === title);
+      item = item as Experience | null;
+      break;
+    case 'certification':
+      item = data.certifications?.list?.find((cert) => cert.name === title);
+      item = item as Certification | null;
+      break;
+    case 'project':
+      item = [...(data.projects?.featured || []), ...(data.projects?.portfolio || [])].find((proj) => proj.name === title) as Project | undefined;
+      item = item as Project | null;
+      break;
+  }
+
+  return {
+    props: {
+      item,
+      type,
+    },
+  };
+}
+
+const { item, type } = Astro.props;
+
+<Layout>
+  {item ? (
+    <div>
+      <h2>
+      {item && item.name}
+      </h2>
+      {/* Render item details based on type */}
+      {type === 'skill' && <p>Skill details here</p>}
+      {type === 'experience' && <p>Experience details here</p>}
+      {type === 'certification' && <p>Certification details here</p>}
+      {type === 'project' && <p>Project details here</p>}
+      {type !== 'skill' && type !== 'experience' && type !== 'certification' && type !== 'project' && <p>Unknown item type</p>}
+    </div>
+  ) : (
+    <p>Item not found</p>
+  )}
+</Layout>

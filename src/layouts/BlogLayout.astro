@@ -1,0 +1,77 @@
+---
+const { frontmatter } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{frontmatter.title} | Wesley Quintero's E-commerce Insights</title>
+  <meta name="description" content={`Expert insights on ${frontmatter.title}. Learn about Amazon marketplace optimization, e-commerce analytics, and data-driven strategies.`} />
+  <meta name="author" content={frontmatter.author} />
+  <meta name="keywords" content="amazon analytics, e-commerce optimization, marketplace strategy, data analysis, business intelligence, amazon seller central, ${frontmatter.title.toLowerCase()}" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content={frontmatter.title} />
+  <meta property="og:description" content={`Expert insights on ${frontmatter.title}. Learn about Amazon marketplace optimization and e-commerce analytics.`} />
+  <meta property="og:image" content="/src/assets/blog-images/your-image.png" />
+  <meta property="og:type" content="article" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={frontmatter.title} />
+  <meta name="twitter:description" content={`Expert insights on ${frontmatter.title}. Learn about Amazon marketplace optimization and e-commerce analytics.`} />
+  <meta name="twitter:image" content="/src/assets/blog-images/your-image.png"
+  
+  <link rel="stylesheet" href="/styles/global.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{frontmatter.title}",
+      "author": {
+        "@type": "Person",
+        "name": "{frontmatter.author}"
+      },
+      "datePublished": "{frontmatter.date.toISOString()}",
+      "image": `/blog-images/${frontmatter.slug}/featured.webp`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wesley Quintero's Portfolio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "public/logo.svg"
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100">
+  <header class="sticky top-0 container mx-auto py-6 bg-slate-900/90 backdrop-blur z-50">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold">Portfolio</a>
+      <div class="space-x-6">
+        <a href="/#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="/#about" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="/#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+        <a href="/blog" class="hover:text-cyan-400 transition-colors">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto py-12">
+    <article class="prose prose-lg md:prose-xl mx-auto prose-invert prose-headings:font-semibold prose-a:text-emerald-400 hover:prose-a:text-emerald-300 prose-img:rounded-xl prose-img:shadow-lg">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold text-emerald-300">{frontmatter.title}</h1>
+        <div class="mt-2 text-slate-400">
+          <time>{frontmatter.date}</time>
+          <span> • {frontmatter.author}</span>
+        </div>
+        {frontmatter.image && <img src={frontmatter.image} alt={frontmatter.title} class="mt-4 rounded-lg w-full" />}
+      </header>
+      
+      <slot />
+    </article>
+  </main>
+</body>
+</html>

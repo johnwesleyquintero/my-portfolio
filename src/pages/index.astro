@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import FeaturedProjectCard from '../components/FeaturedProjectCard.astro';
+import projects from '../data/projects/projects.js';
+import validateForm from '../scripts/contact-form.ts';
+import data from '../data/data-server.js';
+const { experience } = data;
+---
+
+<Layout>
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6">Data-Driven Amazon & E-commerce Solutions</h1>
+      <p class="text-xl text-slate-300 mb-8">I provide data-driven insights, automation, and custom web applications to help Amazon & E-commerce businesses scale and grow revenue. <a href="/ToolsPage" class="text-cyan-400 hover:underline">Try our tools</a> or <a href="#projects" class="text-cyan-400 hover:underline">see my projects</a>.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="py-20 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Featured Projects</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {projects.map((project) => (
+  project.featured 
+    ? <FeaturedProjectCard project={project} /> 
+    : <ProjectCard project={project} />
+))}
+      </div>
+    </div>
+    <p class="text-slate-300 mt-8 text-center">Interested in working together? <a href="#contact" class="text-cyan-400 hover:underline">Get in touch</a>.</p>
+  </section>
+
+  <section id="contact" class="py-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-2">Get in Touch</h2>
+      <p class="text-slate-300 mb-8">Ready to take your e-commerce business to the next level? Contact me today to discuss your needs and how I can help you achieve your goals.</p>
+      <form class="space-y-4" id="contactForm" onsubmit="return validateForm(event)">
+        <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full p-3 rounded bg-slate-800 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-shadow"
+                  required
+                  aria-label="Your email address"
+                  id="emailInput"
+                  aria-describedby="emailError"
+                />
+                <div id="emailError" class="text-red-400 text-sm" role="alert" aria-live="assertive"></div>
+                <textarea
+                  rows="4"
+                  aria-invalid="false"
+                  aria-describedby="messageError"
+                  class="w-full p-3 rounded bg-[var(--background)] focus:ring-2 focus:ring-[var(--primary)] transition-shadow"
+                ></textarea>
+                <div id="messageError" class="text-red-400 text-sm" role="alert" aria-live="assertive"></div>
+                <div id="formStatus" class="text-sm min-h-[1.5rem]" role="status"></div>
+                <button
+                  type="submit"
+                  class="px-6 py-3 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white rounded-[var(--radius-md)] transition-colors"
+                  aria-disabled="false"
+                >
+                  Send Message
+                </button>
+              </form>
+    </div>
+  </section>
+</Layout>
+<script>
+  import validateForm from '../scripts/contact-form.ts';
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Your Website Name",
+  "url": "https://yourwebsite.com"
+}
+</script>
+<img src="path/to/image.webp" loading="lazy" alt="Description" />
+{experience && experience.map((exp) => (
+  <div class="bg-slate-800/50 p-6 rounded-lg mb-6">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <h3 class="text-xl font-bold text-cyan-400">{exp.title}</h3>
+        <p class="text-slate-300">{exp.company}</p>
+      </div>
+      <span class="text-sm text-slate-400">{exp.employment.duration}</span>
+    </div>
+    <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
+      {exp.responsibilities && exp.responsibilities.map((resp) => (
+        <li>{resp}</li>
+      ))}
+    </ul>
+    <div class="flex flex-wrap gap-2">
+      {exp.skills && exp.skills.map((skill) => (
+        <span class="px-2 py-1 text-sm bg-slate-700/40 text-cyan-300 rounded">{skill}</span>
+      ))}
+    </div>
+  </div>
+))}

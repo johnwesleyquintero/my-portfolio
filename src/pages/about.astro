@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/data-server.js';
+import SkillCard from '../components/cards/SkillCard.astro';
+import ExperienceCard from '../components/cards/ExperienceCard.astro';
+
+const { personalInfo, summary } = data.profile;
+const { skills, experience, education, certifications } = data;
+const { name, location, links } = personalInfo;
+const { title, tagline, description, expertise } = summary;
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<Layout title="About | Wesley Quintero" description={description} canonical={pageUrl}>
+  <meta property="og:type" content="profile" />
+  <meta property="og:profile:username" content={name} />
+  <meta property="og:url" content={pageUrl} />
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-12">
+      <h1 class="text-4xl font-bold mb-4">{name}</h1>
+      <h2 class="text-2xl text-gray-600 mb-4">{title}</h2>
+      <p class="text-xl mb-4">{tagline}</p>
+      <p class="mb-6">{description}</p>
+      <div class="flex gap-4 mb-6">
+        <a href={links.linkedin} target="_blank" class="text-blue-600 hover:text-blue-800">LinkedIn</a>
+        <a href={links.github} target="_blank" class="text-blue-600 hover:text-blue-800">GitHub</a>
+        <a href={links.portfolio} target="_blank" class="text-blue-600 hover:text-blue-800">Portfolio</a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Expertise</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {expertise.map((item) => (
+          <div class="bg-gray-50 p-4 rounded-lg" role="listitem">{item}</div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Technical Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.categories.technical.map((skill) => (
+          <SkillCard skill={skill} />
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Experience</h2>
+      <div class="space-y-8">
+        {experience.map((job) => (
+          <ExperienceCard job={job} />
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Education</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {education.map((edu) => (
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-2">{edu.institution}</h3>
+            {edu.degree && <p class="text-gray-600 mb-1">{edu.degree}</p>}
+            {edu.specialization && <p class="text-gray-600 mb-1">{edu.specialization}</p>}
+            {edu.field && <p class="text-gray-600 mb-1">{edu.field}</p>}
+            <p class="text-gray-500">{edu.period || edu.completionDate}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {certifications.list.map((cert) => (
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-2">{cert.name}</h3>
+            <p class="text-gray-600 mb-2">Issued by {cert.issuer}</p>
+            {cert.certificates && (
+              <div class="mt-3">
+                <p class="font-medium mb-2">Includes:</p>
+                <ul class="list-disc list-inside space-y-1">
+                  {cert.certificates.map((item) => (
+                    <li class="text-gray-600">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,1628 @@
+{
+  "categories": [
+    {
+      "name": "Brand Analytics",
+      "topics": [
+        {
+          "title": "Brand Performance",
+          "key_points": [
+            "Brand analytics dashboard utilization",
+            "Search term analysis",
+            "Market basket analysis",
+            "Demographics insights"
+          ],
+          "best_practices": [
+            "Regular brand health monitoring",
+            "Competitor brand tracking",
+            "Customer behavior analysis",
+            "Brand loyalty metrics tracking"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Voice of Customer",
+          "key_points": [
+            "Review sentiment analysis",
+            "Customer feedback aggregation",
+            "Product improvement insights",
+            "Customer satisfaction metrics"
+          ],
+          "best_practices": [
+            "Regular review monitoring",
+            "Proactive customer engagement",
+            "Feedback implementation strategy",
+            "Customer service optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pricing Strategy",
+      "topics": [
+        {
+          "title": "Dynamic Pricing",
+          "key_points": [
+            "Competitive price monitoring",
+            "Profit margin optimization",
+            "Seasonal pricing strategies",
+            "Bundle pricing tactics"
+          ],
+          "best_practices": [
+            "Use automated repricing tools",
+            "Monitor competitor prices",
+            "Implement price testing",
+            "Optimize profit margins"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Promotional Strategy",
+          "key_points": [
+            "Lightning deals optimization",
+            "Coupon strategy",
+            "Prime day preparation",
+            "Deal of the day planning"
+          ],
+          "best_practices": [
+            "Plan promotional calendar",
+            "Calculate promotion profitability",
+            "Monitor promotion performance",
+            "Optimize deal timing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "International Expansion",
+      "topics": [
+        {
+          "title": "Global Marketplace Strategy",
+          "key_points": [
+            "Market selection criteria",
+            "Local regulations compliance",
+            "Currency management",
+            "International shipping logistics"
+          ],
+          "best_practices": [
+            "Research target markets",
+            "Understand local regulations",
+            "Optimize international listings",
+            "Manage currency risks"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Cross-Border Trade",
+          "key_points": [
+            "VAT and tax management",
+            "International returns handling",
+            "Multi-language support",
+            "Global inventory strategy"
+          ],
+          "best_practices": [
+            "Implement tax compliance",
+            "Optimize shipping costs",
+            "Provide local language support",
+            "Manage international inventory"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Storage fee optimization",
+            "Multi-channel fulfillment",
+            "Return management"
+          ],
+          "best_practices": [
+            "Calculate FBA fees accurately",
+            "Optimize product packaging",
+            "Monitor inventory age",
+            "Plan removal orders"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketplace Optimization",
+      "topics": [
+        {
+          "title": "Product Listing Optimization",
+          "key_points": [
+            "Keyword-rich titles within 200 characters",
+            "High-quality product images",
+            "Bullet points highlighting key features",
+            "Detailed product descriptions",
+            "Backend search terms optimization"
+          ],
+          "best_practices": [
+            "Use relevant search terms in titles",
+            "Include brand name and key specifications",
+            "Maintain clear, concise bullet points",
+            "Optimize for mobile viewing"
+          ]
+        },
+        {
+          "title": "Amazon SEO Strategy",
+          "key_points": [
+            "Keyword research and implementation",
+            "Category and browse node optimization",
+            "Search term optimization",
+            "Title and description optimization"
+          ],
+          "best_practices": [
+            "Research competitor keywords",
+            "Use Amazon's search suggestion tool",
+            "Monitor search term performance",
+            "Regular keyword optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PPC Advertising",
+      "topics": [
+        {
+          "title": "Sponsored Products Strategy",
+          "key_points": [
+            "Campaign structure optimization",
+            "Keyword targeting strategies",
+            "Bid management",
+            "Performance tracking"
+          ],
+          "best_practices": [
+            "Start with automatic campaigns",
+            "Use negative keywords",
+            "Optimize bids based on ACoS",
+            "Regular campaign monitoring"
+          ]
+        },
+        {
+          "title": "Sponsored Brands Campaigns",
+          "key_points": [
+            "Brand awareness strategies",
+            "Custom headline creation",
+            "Product selection for ads",
+            "Landing page optimization"
+          ],
+          "best_practices": [
+            "Create compelling headlines",
+            "Choose best-performing products",
+            "Test different ad formats",
+            "Monitor brand analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory Management",
+      "topics": [
+        {
+          "title": "Stock Level Optimization",
+          "key_points": [
+            "Inventory forecasting",
+            "Reorder point calculation",
+            "Storage fee management",
+            "Seasonal planning"
+          ],
+          "best_practices": [
+            "Use inventory management tools",
+            "Monitor storage fees",
+            "Plan for seasonal variations",
+            "Set up reorder alerts"
+          ]
+        },
+        {
+          "title": "FBA Strategy",
+          "key_points": [
+            "FBA vs. FBM decision making",
+            "Inventory allocation",
+            "Multi-channel fulfillment",
+            "Long-term storage management"
+          ],
+          "best_practices": [
+            "Optimize FBA inventory levels",
+            "Monitor FBA fees",
+            "Implement removal orders",
+            "Balance inventory across channels"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytics and Reporting",
+      "topics": [
+        {
+          "title": "Performance Metrics",
+          "key_points": [
+            "Sales metrics tracking",
+            "Conversion rate optimization",
+            "Customer behavior analysis",
+            "Competitor monitoring"
+          ],
+          "best_practices": [
+            "Regular performance review",
+            "Track key metrics daily",
+            "Monitor customer feedback",
+            "Analyze market trends"
+          ]
+        },
+        {
+          "name": "Marketplace Optimization",
+          "topics": [
+            {
+              "title": "Product Listing Optimization",
+              "key_points": [
+                "Keyword-rich titles within 200 characters",
+                "High-quality product images",
+                "Bullet points highlighting key features",
+                "Detailed product descriptions",
+                "Backend search terms optimization"
+              ],
+              "best_practices": [
+                "Use relevant search terms in titles",
+                "Include brand name and key specifications",
+                "Maintain clear, concise bullet points",
+                "Optimize for mobile viewing"
+              ]
+            },
+            {
+              "title": "Amazon SEO Strategy",
+              "key_points": [
+                "Keyword research and implementation",
+                "Category and browse node optimization",
+                "Search term optimization",
+                "Title and description optimization"
+              ],
+              "best_practices": [
+                "Research competitor keywords",
+                "Use Amazon's search suggestion tool",
+                "Monitor search term performance",
+                "Regular keyword optimization"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PPC Advertising",
+          "topics": [
+            {
+              "title": "Sponsored Products Strategy",
+              "key_points": [
+                "Campaign structure optimization",
+                "Keyword targeting strategies",
+                "Bid management",
+                "Performance tracking"
+              ],
+              "best_practices": [
+                "Start with automatic campaigns",
+                "Use negative keywords",
+                "Optimize bids based on ACoS",
+                "Regular campaign monitoring"
+              ]
+            },
+            {
+              "title": "Sponsored Brands Campaigns",
+              "key_points": [
+                "Brand awareness strategies",
+                "Custom headline creation",
+                "Product selection for ads",
+                "Landing page optimization"
+              ],
+              "best_practices": [
+                "Create compelling headlines",
+                "Choose best-performing products",
+                "Test different ad formats",
+                "Monitor brand analytics"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory Management",
+          "topics": [
+            {
+              "title": "Stock Level Optimization",
+              "key_points": [
+                "Inventory forecasting",
+                "Reorder point calculation",
+                "Storage fee management",
+                "Seasonal planning"
+              ],
+              "best_practices": [
+                "Use inventory management tools",
+                "Monitor storage fees",
+                "Plan for seasonal variations",
+                "Set up reorder alerts"
+              ]
+            },
+            {
+              "title": "FBA Strategy",
+              "key_points": [
+                "FBA vs. FBM decision making",
+                "Inventory allocation",
+                "Multi-channel fulfillment",
+                "Long-term storage management"
+              ],
+              "best_practices": [
+                "Optimize FBA inventory levels",
+                "Monitor FBA fees",
+                "Implement removal orders",
+                "Balance inventory across channels"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Business Reports",
+          "key_points": [
+            "Sales and traffic analysis",
+            "Return rate monitoring",
+            "Inventory performance",
+            "Profitability analysis"
+          ],
+          "best_practices": [
+            "Set up automated reports",
+            "Monitor key performance indicators",
+            "Track seasonal trends",
+            "Analyze customer behavior"
+          ]
+        }
+      ]
+    }
+  ]
+}

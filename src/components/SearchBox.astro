@@ -1,0 +1,12 @@
+---
+import React from 'react';
+import SearchBoxReact from './SearchBox.tsx';
+
+export interface Props {
+  placeholder?: string;
+  onInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+---
+
+<SearchBoxReact {...Astro.props} client:idle />

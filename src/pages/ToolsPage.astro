@@ -1,0 +1,65 @@
+---
+import React, { Suspense } from 'react';
+import ErrorBoundary from '../components/ErrorBoundary';
+import Layout from '../layouts/Layout.astro';
+
+const ProfitCalculator = React.lazy(() => import('@/components/AmazonReactTools/ProfitCalculator').then(module => ({ default: module.default })));
+const ListingOptimizer = React.lazy(() => import('@/components/AmazonReactTools/ListingOptimizer').then(module => ({ default: module.default })));
+const PPCAnalyzer = React.lazy(() => import('@/components/AmazonReactTools/PPCAnalyzer').then(module => ({ default: module.default })));
+const KeywordAnalyzer = React.lazy(() => import('@/components/AmazonReactTools/KeywordAnalyzer').then(module => ({ default: module.default })));
+import ProjectsFilter from '@/components/AmazonReactTools/ProjectsFilter';
+import projects from '../data/projects/projects.js';
+---
+
+<Layout>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-4xl font-bold text-white mb-8">Amazon Seller Tools</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ErrorBoundary>
+        <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+          <h2 class="text-2xl font-semibold text-emerald-400 mb-4">Profit Calculator</h2>
+          <Suspense fallback={<div class="p-4 text-gray-400">Loading calculator...</div>}>
+            <ProfitCalculator client:load />
+          </Suspense>
+        </div>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+          <h2 class="text-2xl font-semibold text-emerald-400 mb-4">Listing Optimizer</h2>
+          <Suspense fallback={<div class="p-4 text-gray-400">Loading optimizer...</div>}>
+            <ListingOptimizer client:load />
+          </Suspense>
+        </div>
+      </ErrorBoundary>
+      
+      <ErrorBoundary>
+        <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+          <h2 class="text-2xl font-semibold text-emerald-400 mb-4">PPC Analyzer</h2>
+          <Suspense fallback={<div class="p-4 text-gray-400">Loading PPC analyzer...</div>}>
+            <PPCAnalyzer client:load />
+          </Suspense>
+        </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+          <h2 class="text-2xl font-semibold text-emerald-400 mb-4">Keyword Analyzer</h2>
+          <Suspense fallback={<div class="p-4 text-gray-400">Loading keyword analyzer...</div>}>
+            <KeywordAnalyzer client:load />
+          </Suspense>
+        </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+          <h2 class="text-2xl font-semibold text-emerald-400 mb-4">Projects Filter</h2>
+          <Suspense fallback={<div class="p-4 text-gray-400">Loading projects filter...</div>}>
+            <ProjectsFilter client:load initialProjects={projects} />
+          </Suspense>
+        </div>
+      </ErrorBoundary>
+    </div>
+  </div>
+</Layout>

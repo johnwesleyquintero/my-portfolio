@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text {
+      font: bold 24px sans-serif;
+      fill: #2c3e50;
+    }
+    .circle {
+      fill: none;
+      stroke: #3498db;
+      stroke-width: 3;
+    }
+  </style>
+  <circle class="circle" cx="60" cy="60" r="55"/>
+  <text class="logo-text" x="50%" y="62%" text-anchor="middle">DEV</text>
+</svg>

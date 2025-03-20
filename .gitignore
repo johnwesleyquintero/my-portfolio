@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnpm/
+
+# Build output
+.cache/
+.coverage/
+.next/
+.out/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Local development
+.netlify
+
+# Editor directories
+.idea/
+.vscode/
+
+# System Files
+.DS_Store
+
+# Astro
+astro-client-load.js
+
+# Testing
+cypress/screenshots/
+cypress/videos/
+
+# Error reports
+chromewebdata*
+.report.*
+
+# Local config files
+server-config.conf

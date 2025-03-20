@@ -1,0 +1,46 @@
+---
+import { atom, useStore } from '@nanostores/astro';
+const themeStore = atom<'light' | 'dark'>('light');
+
+if (typeof window !== 'undefined') {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  themeStore.set(savedTheme as 'light' | 'dark');
+}
+---
+
+<div class="theme-toggle" client:load>
+  <button 
+    aria-label="Toggle theme"
+    on:click={() => {
+      const newTheme = themeStore.get() === 'light' ? 'dark' : 'light';
+      themeStore.set(newTheme);
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }}
+  >
+    <span class="sun">☀️</span>
+    <span class="moon">🌙</span>
+  </button>
+</div>
+
+<style>
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+button {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moon { display: none; }
+[data-theme='dark'] .moon { display: inline; }
+[data-theme='dark'] .sun { display: none; }
+</style>

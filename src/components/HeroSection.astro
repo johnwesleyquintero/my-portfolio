@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import { profile } from '../data/data-server.js';
+import SearchBox from './SearchBox.astro';
+import ErrorBoundary from './ErrorBoundary';
+
+const { personalInfo, summary } = profile;
+---
+
+<section class="min-h-[80vh] md:min-h-[60vh] flex items-center bg-gradient-to-b from-[var(--bg-primary)] to-[var(--bg-secondary)] py-16">
+  <div class="container max-w-6xl mx-auto px-4 grid md:grid-cols-[300px_1fr] gap-8 items-center">
+    <div class="relative w-48 h-48 mx-auto md:w-64 md:h-64">
+      <ErrorBoundary client:load fallback="<div class='w-full h-full rounded-full bg-[var(--bg-secondary)] flex items-center justify-center'><span class='text-[var(--text-secondary)]'>Photo Unavailable</span></div>">
+        <Image
+          src="/assets/displayPhoto.png"
+          alt="Wesley Quintero"
+          class="rounded-full w-full h-full object-cover shadow-xl"
+          width={256}
+          height={256}
+          format="webp"
+          quality={80}
+          loading="eager"
+        />
+      </ErrorBoundary>
+    </div>
+    
+    <div class="space-y-6 text-center md:text-left">
+      <h1 
+        class="text-5xl font-bold bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent transition-colors duration-300"
+        tabindex="0"
+      >
+        {personalInfo.name}
+      </h1>
+      <h2 
+        class="text-2xl font-semibold text-[var(--text-primary)] transition-colors duration-300"
+        tabindex="0"
+      >
+        {summary.title}
+      </h2>
+      <p 
+        class="text-lg text-[var(--text-secondary)] max-w-2xl transition-colors duration-300"
+        tabindex="0"
+      >
+        {summary.tagline}
+      </p>
+      
+      <div 
+        class="flex flex-wrap gap-2 justify-center md:justify-start" 
+        style="min-height: 2.5rem;"
+        role="list"
+        aria-label="Areas of expertise"
+      >
+        {summary.expertise.map((item) => (
+          <span 
+            class="px-3 py-1 bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] rounded-full text-sm transition-all duration-300 hover:bg-[var(--accent-primary)]/20"
+            role="listitem"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+
+      <div class="mt-6">
+        <SearchBox 
+          placeholder="Search skills and projects..."
+          onInput={e => { console.log(e.target.value) }}
+      </div>
+
+      <div class="flex gap-4 justify-center md:justify-start mt-8">
+        <a 
+          href={personalInfo.links.linkedin}
+          class="px-6 py-3 bg-[var(--accent-primary)] text-[var(--bg-primary)] rounded-lg hover:bg-[var(--accent-secondary)] transition-colors flex items-center gap-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 2.045h-3.028v10.012h3.028v-10.012zm-1.514 12.279c-.975 0-1.595.652-1.595 1.464 0 .812.62 1.464 1.595 1.464.974 0 1.595-.652 1.595-1.464 0-.812-.621-1.464-1.595-1.464zm-4.532-2.214h-3.028v12.279h3.028v-12.279zm-1.514-1.013c1.944 0 3.202 1.319 3.202 3.013 0 1.664-1.258 3.012-3.202 3.012-1.944 0-3.201-1.348-3.201-3.012 0-1.694 1.257-3.013 3.201-3.013zm9.061 3.228c0-3.592-3.041-6.52-6.767-6.52-3.726 0-6.767 2.928-6.767 6.52 0 3.593 3.041 6.521 6.767 6.521 3.726 0 6.767-2.928 6.767-6.521z"/></svg>
+          LinkedIn
+        </a>
+        <a
+          href={personalInfo.links.github}
+          class="px-6 py-3 bg-[var(--bg-secondary)] hover:bg-[var(--accent-secondary)] text-[var(--text-primary)] rounded-lg transition-colors flex items-center gap-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.006 2.002c-5.526 0-10.006 4.481-10.006 10.007 0 4.426 2.875 8.17 6.84 9.455.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.699-2.782.605-3.369-1.345-3.369-1.345-.455-1.164-1.109-1.471-1.109-1.471-.907-.623.069-.608.069-.608 1.003.071 1.532 1.031 1.532 1.031.892 1.527 2.341 1.085 2.91.829.091-.643.349-1.085.635-1.334-2.221-.253-4.561-1.11-4.561-4.939 0-1.087.391-1.979 1.032-2.666-.103-.254-.447-1.268.097-2.64 0 0 .84-.267 2.75 1.024.797-.221 1.651-.331 2.506-.336.855.005 1.709.114 2.506.336 1.909-1.291 2.747-1.024 2.747-1.024.543 1.372.198 2.386.095 2.64.641.687 1.031 1.578 1.031 2.666 0 3.839-2.344 4.684-4.572 4.933.359.309.678.926.678 1.856 0 1.337-.012 2.415-.012 2.741 0 .267.181.578.688.482 3.963-1.29 6.835-5.032 6.835-9.454 0-5.526-4.48-10.007-10.006-10.007z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

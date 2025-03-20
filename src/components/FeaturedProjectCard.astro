@@ -1,0 +1,75 @@
+---
+import type { Project } from './ProjectCard.astro';
+import { Image } from 'astro:assets';
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props as Props;
+---
+
+<article class="rounded-lg bg-gradient-to-br from-emerald-500/10 to-slate-800 p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group relative overflow-hidden" style="min-height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-400/15 to-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    
+    <header class="mb-6">
+        <div class="flex items-center gap-4 mb-4">
+            <h3 class="text-2xl font-bold text-emerald-300">{project.name}</h3>
+            <span class="px-3 py-1.5 text-sm font-mono bg-emerald-500/20 text-emerald-200 rounded-lg">v{project.version}</span>
+        </div>
+        <p class="text-lg text-slate-200 mb-6">{project.description}</p>
+    </header>
+
+    {project.imageUrl ? (
+      <Image
+        src={project.imageUrl}
+        alt={project.name}
+        class="rounded-lg object-cover h-48 w-full"
+        loading="lazy"
+        format="webp"
+        width={400}
+        height={300}
+        style="object-fit: cover;"
+      />
+    ) : (
+      <div class="rounded-lg object-cover h-48 w-full bg-gray-200">
+        {/* Placeholder or fallback image here */}
+      </div>
+    )}
+
+    <div class="grid gap-6 mb-6">
+        <div class="space-y-3">
+            <h4 class="text-base font-semibold text-emerald-400">Core Technologies</h4>
+            <div class="flex flex-wrap gap-3">
+                {Object.values(project.techStack).map((techs) => (
+                  techs.map((tech: string) => (
+                    <span class="px-3 py-1.5 text-sm bg-slate-700/40 text-slate-100 rounded-full" role="listitem">
+                      {tech}
+                    </span>
+                  ))
+                ))}
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-8 pt-6 border-t border-emerald-500/20 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <a href={project.repository} class="text-emerald-300 hover:text-emerald-200 text-base flex items-center gap-2 font-medium" target="_blank" rel="noopener noreferrer">
+            <span>Explore Codebase</span>
+            <span aria-hidden="true">↗</span>
+        </a>
+        <a href={project.preview} class="text-slate-300 hover:text-slate-200 text-base font-medium" target="_blank" rel="noopener noreferrer">
+            Live Demo →
+        </a>
+    </footer>
+
+    <style>
+        @media (max-width: 768px) {
+            article {
+                min-height: 280px;
+                padding: 1.5rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</article>

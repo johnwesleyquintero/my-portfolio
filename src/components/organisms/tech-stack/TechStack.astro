@@ -1,0 +1,66 @@
+---
+interface Props {
+  stack: { [category: string]: string[] };
+  categories: string[];
+}
+
+const { stack, categories } = Astro.props as Props;
+
+let selectedCategory = 'all';
+
+const filterItems = (category: string) => {
+  selectedCategory = category;
+};
+
+const filteredStack = Object.entries(stack).filter(([category, items]) => {
+  return selectedCategory === 'all' || category === selectedCategory;
+});
+---
+
+<div className="space-y-4">
+  <div className="flex flex-wrap gap-2 mb-4" role="group" aria-label="Filter projects by category">
+    <button 
+      on:click={() => filterItems('all')}
+      role="button"
+      aria-pressed={selectedCategory === 'all'}
+      className="px-3 py-1 text-sm rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400"
+      class:list={{
+        'bg-emerald-500/20 text-emerald-300': selectedCategory === 'all',
+        'bg-slate-700/30 text-slate-300 hover:bg-slate-700/50': selectedCategory !== 'all',
+      }}
+    >
+      All
+    </button>
+    {categories.map(category => (
+      <button
+        on:click={() => filterItems(category)}
+        role="button"
+        aria-pressed={selectedCategory === category}
+        className="px-3 py-1 text-sm rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        class:list={{
+          'bg-emerald-500/20 text-emerald-300': selectedCategory === category,
+          'bg-slate-700/30 text-slate-300 hover:bg-slate-700/50': selectedCategory !== category,
+        }}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {filteredStack.map(([category, items]) => (
+      <div className="bg-slate-800/30 p-4 rounded-lg border border-slate-700/50">
+        <h3 className="text-sm font-semibold text-emerald-400 mb-2">{category}</h3>
+        <div className="flex flex-wrap gap-2">
+          {items.map(item => (
+            <span 
+              className="px-2 py-1 text-xs bg-slate-700/20 text-slate-200 rounded-full"
+              role="listitem"
+              aria-label={`${category} technology: ${item}`}
+            >{item}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

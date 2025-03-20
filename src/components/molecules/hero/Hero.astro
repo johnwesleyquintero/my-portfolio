@@ -1,0 +1,114 @@
+---
+import '../styles/theme.css';
+---
+
+<div class="hero-container" client:load>
+  <div class="content-grid">
+    <div class="text-content">
+      <h1 class="gradient-text">
+        Hi, I'm <span class="name-accent">John Wick</span>
+      </h1>
+      <div class="role-animation">
+        <span class="static-text">I build </span>
+        <div class="dynamic-text">
+          <span>web experiences</span>
+          <span>design systems</span>
+          <span>stellar UX</span>
+        </div>
+      </div>
+      <p class="intro-text">
+        Frontend architect specializing in performant interfaces
+        and immersive interactions
+      </p>
+      <button class="cta-button" aria-label="View my work">
+        Explore Portfolio
+      </button>
+    </div>
+    
+    <div class="avatar-container">
+      <div class="floating-avatar">
+        <img 
+          src="/images/avatar.png" 
+          alt="John Wick avatar"
+          loading="lazy"
+          width="400"
+          height="400"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.hero-container {
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.role-animation {
+  margin: 1.5rem 0;
+  height: 2em;
+  overflow: hidden;
+}
+
+.dynamic-text span {
+  display: block;
+  animation: slide 8s infinite;
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes slide {
+  0% { opacity: 0; transform: translateY(-100%); }
+  10%, 30% { opacity: 1; transform: translateY(0); }
+  40%, 100% { opacity: 0; transform: translateY(100%); }
+}
+
+.floating-avatar {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.cta-button {
+  background: var(--primary);
+  color: var(--surface);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+</style>

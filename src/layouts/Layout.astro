@@ -1,0 +1,155 @@
+import Header from '@/components/organisms/header/Header';
+import HeroSection from '@/components/HeroSection.astro';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import ThemeToggle from '../components/atoms/ThemeToggle';
+import { profile } from '../data/data-server.js';
+
+if (!profile || !profile.personalInfo || !profile.summary) {
+  throw new Error('Required profile data is missing');
+}
+
+const { personalInfo, summary } = profile;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+  <meta http-equiv="Expires" content="Mon, 31 Dec 2029 00:00:00 GMT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content={personalInfo.name} />
+  <link rel="preload" href="/styles/global.css" as="style" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="preload" href="/styles/theme.css" as="style" />
+  <link rel="stylesheet" href="/styles/theme.css" />
+  <link rel="preload" href="/assets/displayPhoto.png" as="image" />
+  <!-- Primary Meta Tags -->
+  <title>{personalInfo.name} - {summary.title}</title>
+  <meta name="title" content={`${personalInfo.name} - ${summary.title}`} />
+  <meta name="description" content={summary.description} />
+  <meta name="keywords" content={summary.expertise.join(", ")} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{personalInfo.links.portfolio}" />
+  <meta property="og:title" content="{personalInfo.name} | {summary.title}" />
+  <meta property="og:description" content="{summary.description}" />
+  <meta property="og:image" content="/assets/displayPhoto.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@wesleyquintero" />
+  <meta name="twitter:creator" content="@wesleyquintero" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{personalInfo.name}",
+    "jobTitle": "{summary.title}",
+    "url": "{personalInfo.links.portfolio}",
+    "sameAs": [
+      "{personalInfo.links.linkedin}",
+      "{personalInfo.links.github}"
+    ],
+    "image": "/assets/displayPhoto.png",
+    "description": "{summary.description}"
+  }
+  </script>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="{personalInfo.links.portfolio}" />
+  <meta property="twitter:title" content="{personalInfo.name} | {summary.title}" />
+  <meta property="twitter:description" content="{summary.description}" />
+  <meta property="twitter:image" content="{personalInfo.links.portfolio}/assets/displayPhoto.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: var(--bg-primary);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 0;
+      transition: background-color var(--transition-normal);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      transition: color var(--transition-normal);
+      color: var(--text-primary);
+    }
+    nav a:hover {
+      color: var(--accent-primary);
+    }
+    main {
+      padding: 3rem 0;
+    }
+    h1 {
+      font-size: 3.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+    p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    p a {
+      color: var(--accent-primary);
+      transition: color var(--transition-normal);
+    }
+    p a:hover {
+      text-decoration: underline;
+      color: var(--accent-secondary);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]">
+  <header class="sticky top-0 container mx-auto py-6 bg-[var(--bg-primary)]/90 backdrop-blur z-50">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">Portfolio</a>
+      <div class="flex items-center space-x-6">
+        <a href="/#projects" class="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">Projects</a>
+        <a href="/#contact" class="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">Contact</a>
+        <a href="/blog" class="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">Blog</a>
+        <a href="/ToolsPage" class="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">Amazon Tools</a>
+        <ThemeToggle client:load />
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto py-12">
+    <ErrorBoundary>
+      <HeroSection />
+      <slot />
+    </ErrorBoundary>
+  </main>
+</body>
+</html>
+
+const Layout: React.FC = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  );
+};
+
+export default Layout;
